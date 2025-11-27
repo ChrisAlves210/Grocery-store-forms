@@ -10,16 +10,24 @@
 <p><strong>Category:</strong> {{ item.category }}</p>
 
 <p><strong>Store:</strong> {{ item.store.title }}</p>
+<p><strong>Created by:</strong> {{ item.created_by.username if item.created_by }}</p>
 
 
 <h2>Edit Item</h2>
 
-<form>
+<form method="POST">
     <fieldset>
         <legend>Please enter your information:</legend>
 
         {% include '_item_form.html' %}
     </fieldset>
 </form>
+
+{% if current_user.is_authenticated %}
+<form action="/add_to_shopping_list/{{ item.id }}" method="POST">
+    <button type="submit">Add to Shopping List</button>
+    {{ form.csrf_token if form }}
+</form>
+{% endif %}
 
 {% endblock %}

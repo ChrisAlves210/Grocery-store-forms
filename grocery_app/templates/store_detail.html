@@ -4,6 +4,7 @@
 <h1>Store - {{ store.title }}</h1>
 
 <strong>Address:</strong> {{ store.address }}
+<p><strong>Created by:</strong> {{ store.created_by.username if store.created_by }}</p>
 
 <h2>Items</h2>
 
@@ -20,7 +21,7 @@
 
 <h2>Edit Store</h2>
 
-<form>
+<form method="POST">
     <fieldset>
         <legend>Please enter your information:</legend>
 

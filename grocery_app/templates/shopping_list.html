@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Your Shopping List</h1>
+<div class="items">
+    {% if items %}
+        {% for item in items %}
+        <div class="item-details">
+            <a href="/item/{{ item.id }}"><img src="{{ item.photo_url }}" alt="{{ item.name }}" width="200px"></a>
+            <p><strong>{{ item.name }}</strong></p>
+            <p><strong>Price: ${{ item.price }}</strong></p>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p>No items yet.</p>
+    {% endif %}
+</div>
+{% endblock %}
