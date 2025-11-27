@@ -1,0 +1,7 @@
+{{ form.hidden_tag() }}
+<p>{{ form.name.label }}<br>{{ form.name(size=40) }}</p>
+<p>{{ form.price.label }}<br>{{ form.price(step='0.01') }}</p>
+<p>{{ form.category.label }}<br>{{ form.category() }}</p>
+<p>{{ form.photo_url.label }}<br>{{ form.photo_url(size=60) }}</p>
+<p>{{ form.store.label }}<br>{{ form.store() }}</p>
+<p>{{ form.submit() }}</p>

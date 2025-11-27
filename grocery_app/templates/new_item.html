@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>New Item</h1>
+
+<form method="POST">
+    <fieldset>
+        <legend>Please enter your information:</legend>
+
+        {% include '_item_form.html' %}
+    </fieldset>
+</form>
+
+
+{% endblock %}
